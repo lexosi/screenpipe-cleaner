@@ -1,0 +1,30 @@
+# screenpipe-manager configuration
+# Copy this file to config.toml in the same directory as the binary.
+
+# Number of days to keep recordings. Data older than this is removed by `cleanup`.
+retention_days = 7
+
+# Informational storage cap in GB. Future versions may trigger auto-cleanup
+# when total disk usage exceeds this limit.
+max_storage_gb = 10.0
+
+# Path to the screenpipe data directory.
+# Leave empty to use the platform default: ~/.screenpipe
+data_dir = ""
+
+# Recording toggles (used for documentation/status display; not enforced by
+# screenpipe-manager itself — configure screenpipe's own settings to change
+# what it records).
+record_audio = true
+record_screen = true
+record_transcription = true
+
+# Apps that should never be recorded.
+# cleanup will also purge any existing DB records for these apps.
+# Example: blacklist = ["1Password", "KeePass", "Bitwarden"]
+blacklist = []
+
+# If non-empty, only these apps are considered for recording (whitelist mode).
+# When both blacklist and whitelist are configured, blacklist takes priority.
+# Example: whitelist = ["Firefox", "VSCode", "Terminal"]
+whitelist = []

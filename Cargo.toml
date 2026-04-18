@@ -1,0 +1,19 @@
+[package]
+name = "screenpipe-manager"
+version = "0.1.0"
+edition = "2021"
+description = "CLI tool to manage screenpipe recordings, data retention, and configuration"
+authors = ["lexosi <iamlexosi@gmail.com>"]
+license = "MIT"
+
+[[bin]]
+name = "screenpipe-manager"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+rusqlite = { version = "0.31", features = ["bundled"] }
+chrono = { version = "0.4", features = ["serde"] }
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+dirs = "5"
