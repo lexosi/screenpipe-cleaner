@@ -1,4 +1,4 @@
-# screenpipe-manager
+# screenpipe-cleaner
 
 A CLI tool to manage [screenpipe](https://github.com/mediar-ai/screenpipe) recordings: clean up old data, enforce retention policies, and inspect disk usage and database statistics.
 
@@ -31,12 +31,12 @@ Built as a portfolio project — the emphasis is on clean module boundaries, idi
 ### Build
 
 ```bash
-git clone https://github.com/your-username/screenpipe-manager
-cd screenpipe-manager
+git clone https://github.com/your-username/screenpipe-cleaner
+cd screenpipe-cleaner
 cargo build --release
 ```
 
-The binary is written to `target/release/screenpipe-manager`.
+The binary is written to `target/release/screenpipe-cleaner`.
 
 ---
 
@@ -78,16 +78,16 @@ Remove records and files older than `retention_days` (default: 7).
 
 ```bash
 # Delete records older than 7 days (from config)
-screenpipe-manager cleanup
+screenpipe-cleaner cleanup
 
 # Preview without deleting
-screenpipe-manager cleanup --dry-run
+screenpipe-cleaner cleanup --dry-run
 
 # Override retention to 30 days for this run
-screenpipe-manager cleanup --days 30
+screenpipe-cleaner cleanup --days 30
 
 # Combine: preview a 30-day cleanup
-screenpipe-manager cleanup --dry-run --days 30
+screenpipe-cleaner cleanup --dry-run --days 30
 ```
 
 **Example output:**
@@ -110,7 +110,7 @@ Retention: 7 days  |  Cutoff: 2026-04-11T12:00:00+00:00
 Print configuration, disk usage, and DB table sizes.
 
 ```bash
-screenpipe-manager status
+screenpipe-cleaner status
 ```
 
 **Example output:**
@@ -143,7 +143,7 @@ screenpipe-manager status
 ## Project Structure
 
 ```
-screenpipe-manager/
+screenpipe-cleaner/
 ├── src/
 │   ├── main.rs      — CLI entry point (clap subcommands) + inline status module
 │   ├── config.rs    — Config struct, TOML loading, path resolution
@@ -159,7 +159,7 @@ screenpipe-manager/
 
 ## Database Schema Assumptions
 
-screenpipe-manager assumes the following screenpipe schema:
+screenpipe-cleaner assumes the following screenpipe schema:
 
 | Table | Key columns used |
 |-------|-----------------|
