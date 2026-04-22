@@ -1,3 +1,5 @@
+⚠️ This repository has been archived. Development has moved to https://github.com/lexosi/screenpipe-macro
+
 # screenpipe-cleaner
 
 A CLI tool to manage [screenpipe](https://github.com/mediar-ai/screenpipe) recordings: clean up old data, enforce retention policies, and inspect disk usage and database statistics.
